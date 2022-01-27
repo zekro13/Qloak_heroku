@@ -77,5 +77,10 @@ flask-wtf==1.0.0
 wtforms==3.0.0
 wrapt==1.13.3
 zipp==3.6.0
-
-
+gunicorn==20.1.0
+flask-mysqldb==0.2.0
+mysqlclient==2.1.0
+passlib==1.7.4
+flask_mail==0.9.1
+blinker==1.4
+email-validator==1.1.3
