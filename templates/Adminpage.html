@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}Adminmanager{% endblock %}
+{% block content %}
+<body xmlns="http://www.w3.org/1999/html">
+
+<div class="container" id="Adminpageheader">
+    <div class="row">
+            <div class="col-2">
+                Name:
+            </div>
+            <div class="col-4">
+                Email:
+            </div>
+            <div class="col-4">
+                Password(hased):
+            </div>
+            <div class="col-2">
+                Status:
+            </div>
+    </div>
+</div>
+{% for account_number in accountdict  %}
+<div class="container" id="accountcontentcontainer">
+    <div class="row">
+            <div class="col-2">
+            {{ accountdict[account_number]["Fname"] }}{{ accountdict[account_number]["Lname"] }}
+            </div>
+            <div class="col-4">
+            {{ accountdict[account_number]["Email"] }}
+            </div>
+            <div class="col-4">
+            {{ accountdict[account_number]["Password"] }}
+            </div>
+            <div class="col-2">
+                {{ accountdict[account_number]["Status"] }}
+            </div>
+    </div>
+
+    <div id="accordian col-12">
+        <button class="col-12" id="accordian_button">manage</button>
+        <div id="accordian_content">
+            <div class="row">
+                <div class="col-6">
+                    <p class="pdot">
+                    {{ accountdict[account_number]["Fname"] }} <button class="editbutton">edit</button>
+                    </p>
+                    <p class="pdot">
+                    {{ accountdict[account_number]["Lname"] }} <button class="editbutton">edit</button>
+                    </p>
+                    <p class="pdot">
+                    {{ accountdict[account_number]["BirthDate"] }} <button class="editbutton">edit</button>
+                    </p>
+                    <p class="pdot">
+                    {{ accountdict[account_number]["Email"] }} <button class="editbutton">edit</button>
+                    </p>
+                    <p class="pdot">
+                    {{ accountdict[account_number]["Password"] }} <button class="editbutton">edit</button>
+                    </p>
+
+                </div>
+                <div class="col-4" id="postetc">
+                    <p>
+                        No. of Posts [??]
+                    </p>
+                    <p>
+                        <button id="Viewposts">View Posts</button>
+                    </p>
+                    <p>
+                        <button id="Disable Account">Disable Account</button>
+                    </p>
+                    <p>
+                        <button id="removeaccbutton">Remove Account</button>
+                    </p>
+
+                </div>
+                <div class="col-2">
+                    <p>Account type: {{ accountdict[account_number]["Account_type"] }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+<script>
+    document.querySelectorAll('#accordian_button').forEach(button => {
+        button.addEventListener('click', () => {
+            const accordionContent = button.nextElementSibling;
+
+            button.classList.toggle('#accordian_button--active');
+
+            if (button.classList.contains('#accordian_button--active')) {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            } else {
+                accordionContent.style.maxHeight = 0;
+            }
+        });
+    });
+</script>
+
+
+</body>
+{% endblock %}

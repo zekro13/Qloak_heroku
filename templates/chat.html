@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Adminmanager{% endblock %}
+{% block content %}
+<h1>Chat room</h1>
+<p>Welcome!! {{ username }} to {{ room }}</p>
+
+{% if current_user.is_authenticated %}
+    <h3>My rooms</h3>
+    <ul>
+        {% for room in rooms %}
+            <li><a href="/rooms/{{ room._id.room_id }}">{{ room.room_name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<body>
+    <div id="messages"></div>
+
+    <form id="message_input_form">
+        <input type="text" id="message_input" placeholder="Enter message here">
+        <button type="submit">Enter</button>
+    </form>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.js"></script>
+
+<script>
+    const socket = io.connect("http://127.0.0.1:5000");
+
+    socket.on('connect', function () {
+        socket.emit('join_room', {
+            username: "{{ username }}",
+            room: "{{ room }}"
+        });
+
+        let message_input = document.getElementById('message_input');
+
+        document.getElementById('message_input_form').onsubmit = function (e) {
+            e.preventDefault();
+            let message = message_input.value.trim();
+            if (message.length) {
+                socket.emit('send_message', {
+                    username: "{{ username }}",
+                    room: "{{ room }}",
+                    message: message
+                })
+            }
+            message_input.value = '';
+            message_input.focus();
+        }
+    });
+
+    socket.on('receive_message', function (data) {
+        console.log(data);
+        const newNode = document.createElement('div');
+        newNode.innerHTML = `<b>${data.username}:&nbsp;</b> ${data.message}`;
+        document.getElementById('messages').appendChild(newNode);
+    });
+
+    socket.on('join_room_announcement', function (data) {
+        console.log(data);
+        const newNode = document.createElement('div');
+        newNode.innerHTML = `<b>${data.username}<b> has joined the room`;
+        document.getElementById('messages').appendChild(newNode);
+    });
+</script>
+
+
+{% endblock %}

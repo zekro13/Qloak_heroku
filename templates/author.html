@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %}author{% endblock %}
+{% block content %}
+
+
+<div id="test" hidden>something</div>
+<div id="wrapper">
+        <div class="page-title wb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                        <h2><i class="fa fa-user"></i>Homepage<small class="hidden-xs-down hidden-sm-down">Nulla felis eros, varius sit amet volutpat non. </small></h2>
+                    </div><!-- end col -->
+                    <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        </ol>
+                    </div><!-- end col -->                    
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end page-title -->
+
+        <section class="section wb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper" id="container">
+                            <div id="content" class="blog-box" style="background-color :#F2F2F2; margin-bottom: 50px;" hidden >
+                                <div style="overflow:hidden; padding:20px">
+                                    <div style="float:left">
+                                        <h3 id="username" style="margin:0px">Username</h3>
+                                    </div>
+                                    <div style="float:right">
+                                        <span class="text-right">
+                                            <small id="date">date</small>
+                                            <small id="time">time</small>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div style="background-color:#F5F0F1; ">
+                                    <img id="image" height="460" width="800" style="margin: auto; object-fit:contain" src="" alt="">
+                                </div>
+                                <!-- end media -->
+                                <div class=" big-meta " style="padding: 20px">
+                                    <p id="caption" style="margin:0px; text-align:justify; font-size:1.2em; padding-bottom:10px">Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor.
+                                        Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
+                                    <button  style="margin-right:10px" type="button" class="btn btn-outline-danger"><i class="fa fa-heart"><span style="padding-left: 10px" id="likes"></span></i></button>
+                                    <button  style="" type="button" class="btn btn-outline-primary"><i class="fa fa-comments"><span style="padding-left: 10px" id="comments">comments</span></i></button>
+                                    <a style="float:right"><u>report</u></a>
+                                </div><!-- end meta -->
+
+                            </div><!-- end blog-box -->
+                        </div><!-- end page-wrapper -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sticky-top">
+                        <div class="sidebar">
+                            <div class="widget">
+                                <h2 style="padding-top: 20px" class="widget-title">Search</h2>
+                                <form class="form-inline search-form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Search on the site">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div><!-- end widget -->
+                            <div class="widget">
+                                <h2 class="widget-title">Recent Posts</h2>
+                                <div class="blog-list-widget">
+                                    <div class="list-group">
+                                        <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                <img src="static/upload/blog_square_01.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
+                                                <small>12 Jan, 2016</small>
+                                            </div>
+                                        </a>
+
+                                        <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                <img src="static/upload/blog_square_02.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">Let's make an introduction for creative life</h5>
+                                                <small>11 Jan, 2016</small>
+                                            </div>
+                                        </a>
+
+                                        <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 last-item justify-content-between">
+                                                <img src="static/upload/blog_square_03.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
+                                                <small>07 Jan, 2016</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div><!-- end blog-list -->
+                            </div><!-- end widget -->
+                            <div class="widget">
+                                <h2 class="widget-title">Popular Categories</h2>
+                                <div class="link-widget">
+                                    <ul>
+                                        <li><a href="#">Fahsion <span>(21)</span></a></li>
+                                        <li><a href="#">Lifestyle <span>(15)</span></a></li>
+                                        <li><a href="#">Art & Design <span>(31)</span></a></li>
+                                        <li><a href="#">Health Beauty <span>(22)</span></a></li>
+                                        <li><a href="#">Clothing <span>(66)</span></a></li>
+                                        <li><a href="#">Entertaintment <span>(11)</span></a></li>
+                                        <li><a href="#">Food & Drink <span>(87)</span></a></li>
+                                    </ul>
+                                </div><!-- end link-widget -->
+                            </div><!-- end widget -->
+                        </div><!-- end sidebar -->
+                            </div>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+</div>
+    <script language="JavaScript">
+
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+        const container = document.getElementById('container');
+        const postbox = document.getElementById('content');
+        function loadImages(numImages = 10){
+
+            let i=0;
+            while(i < numImages){
+                $.getJSON('/get_posts',
+                    function(data) {
+                        console.log(data['postid'])
+                        div = postbox.cloneNode(true)
+                        div.removeAttribute('hidden')
+                        div.querySelector('#image').src = data['imagepath']
+                        div.querySelector('#caption').innerHTML = data['caption']
+                        div.querySelector('#username').innerHTML = data['username']
+                        div.querySelector('#likes').innerHTML = data['likecount']
+                        div.querySelector('#date').innerHTML = data['postdate']
+                        div.querySelector('#time').innerHTML = data['posttime']
+
+                        container.appendChild(div)
+                    });
+                i++;
+                };
+
+            };
+
+        loadImages();
+
+        window.onscroll = function(ev) {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                // you're at the bottom of the page
+                loadImages()
+            }
+        };
+
+
+
+
+
+
+    </script>
+{% endblock %}
